@@ -15,7 +15,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 class AppContainer(private val context: Context) {
-    
+
     val userPreferencesRepository: UserPreferencesRepository by lazy {
         UserPreferencesRepository(context)
     }
@@ -43,6 +43,14 @@ class AppContainer(private val context: Context) {
     private val retrofit: Retrofit by lazy {
         Retrofit.Builder()
             .baseUrl("https://newsapi.org/")
+            .client(okHttpClient)
+            .addConverterFactory(MoshiConverterFactory.create(moshi))
+            .build()
+    }
+
+    private val backendRetrofit: Retrofit by lazy {
+        Retrofit.Builder()
+            .baseUrl("https://newsflow-backend-rg27.onrender.com/")
             .client(okHttpClient)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
