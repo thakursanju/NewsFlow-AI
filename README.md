@@ -31,13 +31,18 @@ A **production-ready full stack Android news application** built with modern And
 
 > Add your screenshots here after taking them from the emulator
 
-| Headlines | Search | Favorites | Settings |
-|-----------|--------|-----------|----------|
-| ![Headlines](<img width="1797" height="982" alt="Screenshot 2026-06-16 074306" src="https://github.com/user-attachments/assets/50e0391e-1af1-4ba8-9a77-7fbcac2be5a8" />
-) | ![Search](<img width="1855" height="1067" alt="Screenshot 2026-06-16 074329" src="https://github.com/user-attachments/assets/599155fb-f00b-4324-a626-9e87ad2b34d5" />
-) |
+## 📱 Screenshots
 
----
+## 📱 Screenshots
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/50e0391e-1af1-4ba8-9a77-7fbcac2be5a8" width="45%" alt="Headlines"/>
+  <img src="https://github.com/user-attachments/assets/599155fb-f00b-4324-a626-9e87ad2b34d5" width="45%" alt="Search"/>
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/bc7be74f-f4a5-4773-a681-d55249808744" width="45%" alt="Favorites"/>
+  <img src="https://github.com/user-attachments/assets/b28b2604-c871-41ec-b6a2-6cc03caca758" width="45%" alt="Settings"/>
+</p>
 
 ## ✨ Features
 
