@@ -1,37 +1,56 @@
 # NewsFlow AI 📰
 
-A **production-ready full stack Android news application** built with modern Android development practices and a cloud-deployed Spring Boot backend.
+> A **production-ready full stack news application** — Android frontend powered by Jetpack Compose + Kotlin, cloud backend built with Spring Boot in Kotlin, PostgreSQL database, and Firebase Authentication.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white"/>
+  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
+</p>
+
+---
 
 ## 🔗 Links
 
-- **Android App:** [github.com/thakursanju/NewsFlow-AI](https://github.com/thakursanju/NewsFlow-AI)
-- **Backend API:** [github.com/thakursanju/NewsFlow-Backend](https://github.com/thakursanju/NewsFlow-Backend)
-- **Live API:** [newsflow-backend-rg27.onrender.com](https://newsflow-backend-rg27.onrender.com)
+| | Link |
+|---|---|
+| 📱 Android App | [github.com/thakursanju/NewsFlow-AI](https://github.com/thakursanju/NewsFlow-AI) |
+| ⚙️ Spring Boot Backend | [github.com/thakursanju/NewsFlow-Backend](https://github.com/thakursanju/NewsFlow-Backend) |
+| 🌐 Live API | [newsflow-backend-rg27.onrender.com](https://newsflow-backend-rg27.onrender.com) |
 
 ---
 
 ## 🏗️ Full Stack Architecture
 
 ```
-┌─────────────────┐        ┌──────────────────┐        ┌─────────────────┐
-│   Android App   │ ──────▶│  Spring Boot API  │ ──────▶│   PostgreSQL    │
-│ Jetpack Compose │  REST  │   Render.com      │  JPA   │   Neon.tech     │
-└─────────────────┘        └──────────────────┘        └─────────────────┘
-         │                          │
-         ▼                          ▼
-┌─────────────────┐        ┌──────────────────┐
-│    NewsAPI      │        │    Firebase       │
-│  (News Feed)    │        │ Authentication    │
-└─────────────────┘        └──────────────────┘
+┌──────────────────────────────────────────────────────────────────┐
+│                        ANDROID APP (Kotlin)                      │
+│         Jetpack Compose · MVVM · Clean Architecture              │
+└────────────────────────┬─────────────────────────────────────────┘
+                         │ REST API (Retrofit)
+          ┌──────────────▼──────────────────┐
+          │   SPRING BOOT BACKEND (Kotlin)   │
+          │   Render.com · Docker · Port 8080│
+          │   5 REST Endpoints · Spring JPA  │
+          └──────┬──────────────┬────────────┘
+                 │              │
+    ┌────────────▼───┐   ┌──────▼──────────┐
+    │  PostgreSQL DB  │   │    Firebase     │
+    │  Neon.tech      │   │  Authentication │
+    │  Cloud Hosted   │   │  JWT Tokens     │
+    └────────────────┘   └─────────────────┘
+                 │
+    ┌────────────▼───┐
+    │    NewsAPI     │
+    │  1000+ Sources │
+    │  50+ Countries │
+    └────────────────┘
 ```
 
 ---
-
-## 📱 Screenshots
-
-> Add your screenshots here after taking them from the emulator
-
-## 📱 Screenshots
 
 ## 📱 Screenshots
 
@@ -44,64 +63,75 @@ A **production-ready full stack Android news application** built with modern And
   <img src="https://github.com/user-attachments/assets/b28b2604-c871-41ec-b6a2-6cc03caca758" width="45%" alt="Settings"/>
 </p>
 
+---
+
 ## ✨ Features
 
-- 📰 Browse top headlines from 50+ countries
-- 🔍 Search articles by keyword
-- ❤️ Save favorites — synced to cloud database
-- 🔐 Google Sign-In + Email/Password authentication
-- 🌙 Dark mode support
-- 🔔 Background news notifications
-- 📶 Offline reading with local cache
+| Feature | Description |
+|---------|-------------|
+| 📰 Top Headlines | Browse news from 50+ countries in real time |
+| 🔍 Smart Search | Search 1000+ articles by keyword |
+| ❤️ Cloud Favorites | Save articles — synced to PostgreSQL via REST API |
+| 🔐 Auth | Google Sign-In + Email/Password via Firebase |
+| 🌙 Dark Mode | System-aware dark/light theme |
+| 🔔 Notifications | Background news alerts via WorkManager |
+| 📶 Offline Mode | Read saved articles without internet via Room DB |
 
 ---
 
 ## 🛠️ Tech Stack
 
-### Android (Frontend)
-| Technology | Purpose |
-|------------|---------|
-| Kotlin | Primary language |
-| Jetpack Compose | Modern declarative UI |
-| MVVM + Clean Architecture | App structure |
-| Retrofit + OkHttp | REST API calls |
-| Room Database | Local offline storage |
-| Paging 3 | Infinite scroll pagination |
-| Firebase Auth | User authentication |
-| DataStore | User preferences |
-| WorkManager | Background notifications |
-| Coil | Image loading |
-| Kotlin Coroutines + Flow | Async operations |
+### 📱 Android Frontend — Kotlin
 
-### Backend
-| Technology | Purpose |
-|------------|---------|
-| Kotlin | Primary language |
-| Spring Boot 4.1 | REST API framework |
-| Spring Data JPA | Database ORM |
-| PostgreSQL | Cloud database |
-| Hibernate | Database migrations |
-| Docker | Containerization |
+| Technology | Version | Purpose |
+|------------|---------|---------|
+| **Kotlin** | 2.0 | Primary language |
+| **Jetpack Compose** | Latest | Declarative UI framework |
+| **MVVM + Clean Architecture** | — | Separation of concerns |
+| **Retrofit2 + OkHttp** | 2.9 | HTTP client for REST APIs |
+| **Room Database** | 2.6 | Local SQLite storage |
+| **Paging 3** | 3.2 | Infinite scroll pagination |
+| **Firebase Auth** | 34.x | User authentication + JWT |
+| **DataStore Preferences** | 1.0 | User settings storage |
+| **WorkManager** | 2.9 | Background tasks |
+| **Coil** | 2.6 | Async image loading |
+| **Kotlin Coroutines + Flow** | 1.8 | Async programming |
+| **Navigation Compose** | 2.7 | Screen navigation |
 
-### Infrastructure
+### ⚙️ Backend — Kotlin + Spring Boot
+
+| Technology | Version | Purpose |
+|------------|---------|---------|
+| **Kotlin** | 1.9 | Primary language |
+| **Spring Boot** | 4.1.0 | REST API framework |
+| **Spring Data JPA** | — | Database ORM layer |
+| **Hibernate** | 7.4 | Auto table creation + migrations |
+| **PostgreSQL Driver** | — | Database connector |
+| **Spring Security** | — | API security layer |
+| **Docker** | — | Containerized deployment |
+
+### ☁️ Infrastructure
+
 | Service | Purpose |
 |---------|---------|
-| Firebase | Authentication |
-| NewsAPI | News data source |
-| Neon.tech | PostgreSQL cloud database |
-| Render.com | Backend hosting |
-| GitHub | Version control |
+| **Firebase** | Auth + JWT token management |
+| **NewsAPI** | Real-time news data source |
+| **Neon.tech** | Serverless PostgreSQL (cloud) |
+| **Render.com** | Backend hosting (Docker) |
+| **GitHub** | Version control (2 repos) |
 
 ---
 
-## 🚀 API Endpoints
+## 🚀 Live API Endpoints
 
-```
-GET  /api/v1/users/favorites/{uid}     → Get user favorites
-POST /api/v1/users/favorites           → Save favorite article
-DELETE /api/v1/users/favorites/{uid}   → Remove favorite
-GET  /api/v1/users/preferences/{uid}   → Get user preferences
-POST /api/v1/users/preferences         → Save user preferences
+Base URL: `https://newsflow-backend-rg27.onrender.com`
+
+```http
+GET    /api/v1/users/favorites/{uid}    → Get all saved articles
+POST   /api/v1/users/favorites          → Save a favorite article
+DELETE /api/v1/users/favorites/{uid}    → Remove a favorite
+GET    /api/v1/users/preferences/{uid}  → Get user preferences
+POST   /api/v1/users/preferences        → Update user preferences
 ```
 
 ---
@@ -110,35 +140,35 @@ POST /api/v1/users/preferences         → Save user preferences
 
 ### Android App
 
-1. Clone the repo:
 ```bash
+# 1. Clone
 git clone https://github.com/thakursanju/NewsFlow-AI.git
+
+# 2. Open in Android Studio
+
+# 3. Create .env file
+echo "NEWS_API_KEY=your_key_here" > .env
+# Get free key at newsapi.org/register
+
+# 4. Add google-services.json from Firebase Console to app/ folder
+
+# 5. Run on emulator or device
 ```
-
-2. Open in Android Studio
-
-3. Create `.env` file in root:
-```
-NEWS_API_KEY=your_newsapi_key_here
-```
-Get your free key at [newsapi.org](https://newsapi.org/register)
-
-4. Add `google-services.json` from Firebase Console to `app/` folder
-
-5. Run on emulator or real device
 
 ### Backend
 
-1. Clone the repo:
 ```bash
+# 1. Clone
 git clone https://github.com/thakursanju/NewsFlow-Backend.git
-```
 
-2. Update `application.properties` with your PostgreSQL URL
+# 2. Add your PostgreSQL URL to application.properties
 
-3. Run locally:
-```bash
+# 3. Run locally
 ./gradlew bootRun
+
+# 4. Or run with Docker
+docker build -t newsflow-backend .
+docker run -p 8080:8080 newsflow-backend
 ```
 
 ---
@@ -149,18 +179,25 @@ git clone https://github.com/thakursanju/NewsFlow-Backend.git
 NewsFlow-AI/
 ├── app/src/main/kotlin/com/example/
 │   ├── data/
-│   │   ├── local/          # Room Database
-│   │   ├── remote/         # Retrofit API
+│   │   ├── local/          # Room Database + DAOs
+│   │   ├── remote/         # Retrofit + API Service
 │   │   ├── model/          # Data models
-│   │   └── repository/     # Data layer
+│   │   └── repository/     # Repository implementations
 │   ├── domain/
 │   │   ├── model/          # Domain models
 │   │   └── repository/     # Repository interfaces
 │   ├── presentation/
-│   │   ├── screens/        # Compose UI screens
-│   │   └── viewmodel/      # ViewModels
+│   │   ├── screens/        # Compose UI screens (6 screens)
+│   │   └── viewmodel/      # ViewModels + StateFlow
 │   ├── di/                 # Dependency injection
-│   └── ui/theme/           # Material Design theme
+│   └── ui/theme/           # Material Design 3 theme
+
+NewsFlow-Backend/
+├── src/main/kotlin/com/newsflow/backend/
+│   ├── controller/         # REST API controllers
+│   ├── model/              # JPA entities (User, Article)
+│   ├── repository/         # Spring Data JPA repositories
+│   └── SecurityConfig.kt   # Spring Security config
 ```
 
 ---
@@ -168,8 +205,9 @@ NewsFlow-AI/
 ## 👨‍💻 Author
 
 **Khushvinder Thakur**
-- GitHub: [@thakursanju](https://github.com/thakursanju)
+📄 License
 
+MIT License — feel free to use this project for learning!
 ---
 
 ## 📄 License
