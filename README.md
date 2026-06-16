@@ -1,82 +1,172 @@
-NewsFlow AI – Smart News Aggregator
+# NewsFlow AI 📰
 
-NewsFlow AI is a modern Android news application built using Kotlin, MVVM Architecture, Room Database, Retrofit, and Material Design 3. The app delivers real-time news from trusted sources worldwide through a clean, intuitive, and responsive user interface.
+A **production-ready full stack Android news application** built with modern Android development practices and a cloud-deployed Spring Boot backend.
 
-Users can browse the latest headlines, search for articles on any topic, read full news stories within the app, and save their favorite articles for offline access. The application leverages modern Android development practices such as StateFlow, Coroutines, Hilt Dependency Injection, Navigation Component, and Paging 3 to ensure scalability, maintainability, and excellent performance.
+## 🔗 Links
 
-Key features include real-time news updates, intelligent search, favorites management, article sharing, dark mode support, personalized settings, and offline storage using Room Database. The app also incorporates robust error handling, smooth navigation, and optimized API communication.
+- **Android App:** [github.com/thakursanju/NewsFlow-AI](https://github.com/thakursanju/NewsFlow-AI)
+- **Backend API:** [github.com/thakursanju/NewsFlow-Backend](https://github.com/thakursanju/NewsFlow-Backend)
+- **Live API:** [newsflow-backend-rg27.onrender.com](https://newsflow-backend-rg27.onrender.com)
 
-NewsFlow AI demonstrates proficiency in Android application development, software architecture, REST API integration, local data persistence, and modern UI/UX design, making it an excellent portfolio project for showcasing professional Android development skills.
+---
 
-like in github repo rpofessional 
-NewsFlow AI 📰
+## 🏗️ Full Stack Architecture
 
-A modern Android news application built with Kotlin and MVVM Architecture that delivers real-time news from trusted sources worldwide. The app provides a seamless reading experience with powerful search capabilities, offline favorites storage, and a clean Material Design 3 interface.
+```
+┌─────────────────┐        ┌──────────────────┐        ┌─────────────────┐
+│   Android App   │ ──────▶│  Spring Boot API  │ ──────▶│   PostgreSQL    │
+│ Jetpack Compose │  REST  │   Render.com      │  JPA   │   Neon.tech     │
+└─────────────────┘        └──────────────────┘        └─────────────────┘
+         │                          │
+         ▼                          ▼
+┌─────────────────┐        ┌──────────────────┐
+│    NewsAPI      │        │    Firebase       │
+│  (News Feed)    │        │ Authentication    │
+└─────────────────┘        └──────────────────┘
+```
 
-✨ Features
-📰 Real-time top headlines powered by NewsAPI
-🔍 Search news articles by keywords and topics
-❤️ Save favorite articles for offline access
-🌐 Read complete articles within the app using WebView
-📱 Modern Material Design 3 UI
-🌙 Dark Mode support
-🔄 Pagination for efficient data loading
-📶 Network state and error handling
-🗄️ Local storage using Room Database
-⚡ Fast and responsive user experience with Coroutines
-🏗️ Clean, scalable MVVM architecture
-🛠️ Tech Stack
-Language: Kotlin
-Architecture: MVVM + Repository Pattern
-Dependency Injection: Hilt
-Networking: Retrofit + OkHttp
-Database: Room Database
-Asynchronous Programming: Kotlin Coroutines & StateFlow
-Navigation: Navigation Component + Safe Args
-Image Loading: Glide
-Pagination: Paging 3
-Preferences: DataStore
-UI: Material Design 3
-📂 Architecture
+---
 
-The project follows Clean Architecture principles with a clear separation of concerns:
+## 📱 Screenshots
 
-Presentation Layer
-│
-├── UI (Activities, Fragments)
-├── ViewModels
-└── Adapters
+> Add your screenshots here after taking them from the emulator
 
-Domain Layer
-│
-├── Use Cases
-└── Repository Interfaces
+| Headlines | Search | Favorites | Settings |
+|-----------|--------|-----------|----------|
+| ![Headlines](<img width="1797" height="982" alt="Screenshot 2026-06-16 074306" src="https://github.com/user-attachments/assets/50e0391e-1af1-4ba8-9a77-7fbcac2be5a8" />
+) | ![Search](<img width="1855" height="1067" alt="Screenshot 2026-06-16 074329" src="https://github.com/user-attachments/assets/599155fb-f00b-4324-a626-9e87ad2b34d5" />
+) |
 
-Data Layer
-│
-├── Remote (NewsAPI)
-├── Local (Room Database)
-└── Repository Implementations
-🚀 Key Learnings
-REST API integration using Retrofit
-Modern Android architecture patterns
-Local data persistence with Room
-Dependency Injection using Hilt
-State management with StateFlow
-Pagination and efficient RecyclerView handling
-Material Design 3 implementation
-Offline-first mobile development practices
-📸 Screenshots
+---
 
-Add screenshots/GIFs here.
+## ✨ Features
 
-⚙️ Setup
-Clone the repository
-Get an API key from NewsAPI
-Add your API key in Constants.kt or local.properties
-Sync Gradle and run the application
-📄 License
+- 📰 Browse top headlines from 50+ countries
+- 🔍 Search articles by keyword
+- ❤️ Save favorites — synced to cloud database
+- 🔐 Google Sign-In + Email/Password authentication
+- 🌙 Dark mode support
+- 🔔 Background news notifications
+- 📶 Offline reading with local cache
 
-This project is developed for learning, portfolio, and demonstration purposes.
+---
 
-⭐ If you found this project useful, consider giving it a star!
+## 🛠️ Tech Stack
+
+### Android (Frontend)
+| Technology | Purpose |
+|------------|---------|
+| Kotlin | Primary language |
+| Jetpack Compose | Modern declarative UI |
+| MVVM + Clean Architecture | App structure |
+| Retrofit + OkHttp | REST API calls |
+| Room Database | Local offline storage |
+| Paging 3 | Infinite scroll pagination |
+| Firebase Auth | User authentication |
+| DataStore | User preferences |
+| WorkManager | Background notifications |
+| Coil | Image loading |
+| Kotlin Coroutines + Flow | Async operations |
+
+### Backend
+| Technology | Purpose |
+|------------|---------|
+| Kotlin | Primary language |
+| Spring Boot 4.1 | REST API framework |
+| Spring Data JPA | Database ORM |
+| PostgreSQL | Cloud database |
+| Hibernate | Database migrations |
+| Docker | Containerization |
+
+### Infrastructure
+| Service | Purpose |
+|---------|---------|
+| Firebase | Authentication |
+| NewsAPI | News data source |
+| Neon.tech | PostgreSQL cloud database |
+| Render.com | Backend hosting |
+| GitHub | Version control |
+
+---
+
+## 🚀 API Endpoints
+
+```
+GET  /api/v1/users/favorites/{uid}     → Get user favorites
+POST /api/v1/users/favorites           → Save favorite article
+DELETE /api/v1/users/favorites/{uid}   → Remove favorite
+GET  /api/v1/users/preferences/{uid}   → Get user preferences
+POST /api/v1/users/preferences         → Save user preferences
+```
+
+---
+
+## ⚙️ Setup & Installation
+
+### Android App
+
+1. Clone the repo:
+```bash
+git clone https://github.com/thakursanju/NewsFlow-AI.git
+```
+
+2. Open in Android Studio
+
+3. Create `.env` file in root:
+```
+NEWS_API_KEY=your_newsapi_key_here
+```
+Get your free key at [newsapi.org](https://newsapi.org/register)
+
+4. Add `google-services.json` from Firebase Console to `app/` folder
+
+5. Run on emulator or real device
+
+### Backend
+
+1. Clone the repo:
+```bash
+git clone https://github.com/thakursanju/NewsFlow-Backend.git
+```
+
+2. Update `application.properties` with your PostgreSQL URL
+
+3. Run locally:
+```bash
+./gradlew bootRun
+```
+
+---
+
+## 📁 Project Structure
+
+```
+NewsFlow-AI/
+├── app/src/main/kotlin/com/example/
+│   ├── data/
+│   │   ├── local/          # Room Database
+│   │   ├── remote/         # Retrofit API
+│   │   ├── model/          # Data models
+│   │   └── repository/     # Data layer
+│   ├── domain/
+│   │   ├── model/          # Domain models
+│   │   └── repository/     # Repository interfaces
+│   ├── presentation/
+│   │   ├── screens/        # Compose UI screens
+│   │   └── viewmodel/      # ViewModels
+│   ├── di/                 # Dependency injection
+│   └── ui/theme/           # Material Design theme
+```
+
+---
+
+## 👨‍💻 Author
+
+**Khushvinder Thakur**
+- GitHub: [@thakursanju](https://github.com/thakursanju)
+
+---
+
+## 📄 License
+
+MIT License — feel free to use this project for learning!
