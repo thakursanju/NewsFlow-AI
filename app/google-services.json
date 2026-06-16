@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "176412270749",
+    "project_id": "newsflow-ai-876d7",
+    "storage_bucket": "newsflow-ai-876d7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:176412270749:android:cc1faf0270ca7ec815b474",
+        "android_client_info": {
+          "package_name": "com.example.newsflow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "176412270749-jmf7jm117sjh71nks21c5pu239k0gudh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.newsflow",
+            "certificate_hash": "29e7e89f48646354e00c51f01027141a76d814f2"
+          }
+        },
+        {
+          "client_id": "176412270749-1t7vl00vns2hrli62a29m3d61uevfit2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAViMHrSIWHNeEzhZKxc_4m1bSNvEWKBJE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "176412270749-1t7vl00vns2hrli62a29m3d61uevfit2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

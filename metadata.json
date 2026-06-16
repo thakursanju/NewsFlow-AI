@@ -1,0 +1,6 @@
+{
+  "name": "NewsFlow AI",
+  "description": "A modern news application that fetches real-time news from NewsAPI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
